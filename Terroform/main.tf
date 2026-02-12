@@ -7,7 +7,7 @@ resource "aws_instance" "game_server" {
   instance_type = "t3.small"
   key_name      = "dev"
 
-  security_groups = [aws_security_group.SPS.name]
+  security_groups = [aws_security_group.boxGame.name]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -22,8 +22,8 @@ resource "aws_instance" "game_server" {
   }
 }
 
-resource "aws_security_group" "SPS" {
-  name = "SPS"
+resource "aws_security_group" "boxGame" {
+  name = "boxGame"
 
   ingress {
     from_port   = 22
