@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/MAHASRI936/Devops_CICD'
+                git branch: 'main', url: 'https://github.com/MAHASRI936/Devops_Practice_Jenkins'
             }
         }
 
