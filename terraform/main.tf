@@ -23,7 +23,7 @@ resource "aws_instance" "game_server" {
 }
 
 resource "aws_security_group" "cicd" {
-  name = "Team20"
+  name = "cicd"
 
   ingress {
     from_port   = 22
