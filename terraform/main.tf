@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "game_server" {
-  ami           = "ami-0a14f53a6fe4dfcd1"
+  ami           = "ami-07a00cf47dbbc844c"
   instance_type = "t3.small"
-  key_name      = "key"
+  key_name      = "dev"
 
-  security_groups = [aws_security_group.Team20.name]
+  security_groups = [aws_security_group.cicd.name]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -22,7 +22,7 @@ resource "aws_instance" "game_server" {
   }
 }
 
-resource "aws_security_group" "Team20" {
+resource "aws_security_group" "cicd" {
   name = "Team20"
 
   ingress {
